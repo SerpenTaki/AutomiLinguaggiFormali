@@ -8,6 +8,10 @@ $\overline{L} = \{ w : w \notin L\}$
 $L.M = \{ uv : u \in L$ e $v \in M \}$
 - **Chiusura (_o Star_) di Kleene:**
 $L^* = \{ w_1 w_2 ... w_k : k \geq 0$ e ogni $w_i \in L\}$
+
+![[Screenshot 2024-03-16 alle 22.46.01.png]]
+![[Screenshot 2024-03-16 alle 22.46.16.png]]
+![[Screenshot 2024-03-16 alle 22.47.08.png]]
 ## Proprietà di chiusura:
 Se $L$ e $M$ sono linguaggi regolari, allora:
 - *Intersezione:* $L \cap M$ è un linguaggio regolare?
