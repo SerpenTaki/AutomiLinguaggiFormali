@@ -29,7 +29,7 @@ Un Automa a Stati Finiti Non Deterministico (NFA) è una quintupla:
 - Formalmente, il *linguaggio accettato* da A è
 		$L(A) = \{ w \in \sum^* | A$ accetta $w\}$
 [[Operazioni sui linguaggi]]
-# Equivalenza di [[Automi a stati finiti#DFA]] e NFA
+# Equivalenza di [[Automi a Stati Finiti#DFA]] e NFA
 - **NFA e DFA** _sono in grado di riconoscere gli stessi linguaggi_
 - Per ogni NFA $N$ c'è un DFA $D$ tale che $L(D) = L(N)$ e viceversa
 ![[Screenshot 2024-03-16 alle 22.50.03.png]]
