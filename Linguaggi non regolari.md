@@ -27,7 +27,7 @@ Abbiamo detto che $r_j=r_i$quindi l'automa terminerà nello stesso stato finale 
 
 # Proprietà dei linguaggi regolari
 Possono essere utilizzate per dimostrare che un DFA effettua un loop per accettare un linguaggio regolare. La dimostrazione è più facile rispetto a quella precedente. 
-## Pumping Lemma (aka Papilloma)
+## Pumping Lemma 
 Sia $L$ un linguaggio regolare. Allora
 - _esiste una lunghezza_ $k>0$ tale che 
 - _ogni parola_ $w\in L$ di lunghezza $|w|\geq k$ 
@@ -54,11 +54,11 @@ Esiste una strategia che ci consente di vincere sempre su un certo linguaggio.
 4.	$\forall i\geq 0 xy^iz\in L$ (giocatore 2 sceglie una potenza affinché la condizione sia verificata)
 Se giocatore 2 vince allora il linguaggio non è regolare. 
 
-### Esistono linguaggi non regolari che rispettano il Papilloma
+### Esistono linguaggi non regolari che rispettano il Pumping Lemma
 
 **Sia $L_{ab}$ il linguaggio delle stringhe sull'alfabeto $(a,b)$ dove il numero di $a$ è uguale al numero di $b$. $L_{ab}$ è regolare?**
 Per assurdo ipotizzo $L_{ab}$ regolare. 
-Se lo è, allora rispetta il Papilloma $\rightarrow$ deve esistere una lunghezza $k>0$ che rende vero il Papilloma.
+Se lo è, allora rispetta il Pumping Lemma $\rightarrow$ deve esistere una lunghezza $k>0$ che rende vero il Pumping Lemma.
 Consideriamo la parola $w=a^kb^k$ , $w$ appartiene al linguaggio e $|w|>k$ .
 Per ogni suddivisione $w\in xyz$ dove $y\neq \varnothing$ e $|xy|\leq k$ 
 $$x = a^P$$
@@ -75,7 +75,7 @@ $w^R = w$ scritto alla rovesciao
 $w = w_1, w_2, \dots, w_k$ 
 $w^R=w_n, w_{n-1}, \dots, w_1$ 
 
-1. Suppongo $L_{rev}$ sia regolare,allora esiste $k>0$ che rende vero il Papilloma
+1. Suppongo $L_{rev}$ sia regolare,allora esiste $k>0$ che rende vero il Pumping Lemma
 2. considero la parola $w=a^kb^2a^k$ 
 3. Per ogni suddivisione di $xyz$ dove $y\neq \epsilon$ e $|xy|\leq k$ 
 $$x = a^P$$
@@ -86,7 +86,7 @@ Se prendiamo come esponente $i=2$ , $xy^2z=a^Pa^{2Q}a^{K-P-Q}b^2a^K= a^{Q+K}b^2a
 
 
 **il linguaggio $L_{p} = \{1^p: p$  è primo$\}$ è regolare?**
-1. Assumo che $L_p$ sia regolare e che $k>0$ sia la lunghezza che rende vero il Papilloma. 
+1. Assumo che $L_p$ sia regolare e che $k>0$ sia la lunghezza che rende vero il Pumping Lemma. 
 2. Considero $w=1ĵ$ dove $j$ è il primo numero primo $>k$ 
 3. Per ogni suddivisione $w=xyz$ dove $y\neq \varnothing$ e $|xy| \leq k$ 
 	1. $x=1^P$ 
