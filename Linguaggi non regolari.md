@@ -2,7 +2,6 @@ Di quanti stati necessita l'automa che riconoscere linguaggio $\{0^n1^n|n\geq0\}
 Occorrono $2n$ stati per poter riconoscere il linguaggio. Essendo $n$ infinito non è possibile determinare un numero finito di stati, pertanto il linguaggio $\{0^n1^n|n\geq0\}$ non è regolare, proprio perché non può essere riconosciuto da un automa a stati finiti. 
 
 # Dimostrazione
-
 È necessario ragionare *per assurdo*, in quanto siamo costretti a dimostrare che non esiste un automa a stati finiti che riconosce un linguaggio che ipotizziamo essere non regolare. 
 Supponiamo che  $L_{01}=\{0^n1^n|n\geq0\}$ sia regolare, allora esiste un DFA A che accetta $L_{01}$ con $k$stati. 
 Cerchiamo ora di dimostrare che esiste una parola appartenente a $L_{01}$ che non viene riconosciuta dall'automa DFA.
@@ -12,23 +11,24 @@ considero la parola $0^i1^i$, la computazione ha la forma $$r_0, r_1, \dots, r_i
 $s_i$ è uno stato finale? Sì, $s_i$ deve essere finale. 
 Cosa succede se a questo automa forniamo in input la parola $0^j1^i$ ? 
 Abbiamo detto che $r_j=r_i$quindi l'automa terminerà nello stesso stato finale $s_i$ e dunque verrebbe riconosciuta una parola che non appartiene a $L_{01}$.
-
-## Riassunto
-- supponiamo che $l_{0}=\{0^n1^n | n \geq 0\}$ 
-- cazzo ha girato slide
-- ...
-
-- cosa succede quando l; automa $A$ legge $1^i$ partendo da $q$ 
-- se l'automa finisce la lettura in uno stato finale
-	- allora accetta, sbagliando la parola $0^j1^j$ 
-- se l'automa finisce la lettura in uno stato non finale
-	- allora rifiuta sbagliando la parola $0^i1^i$ 
-- in entrambi i casi abbiamo ingannato l'automa, quindi $L_{01}$ *non può essere regolare*
-
+##### Riassunto
+- Supponiamo che $L_{01} = \{0^n 1^n : n \geq 0\}$ sia regolare
+- Allora deve essere accettato da un DFA $A$ con un certo numero $k$ di stati
+- Cosa succede quando $A$ legge $0^k$?
+- Seguirà una qualche sequenza di transizioni:
+	- ![[Pasted image 20240323152243.png]]
+- Siccome ci sono $k+1$ stati nella sequenza, *esiste uno stato che si ripete:* esistono $i<j$ tali che $p_i = p_j$ 
+- Chiamiamo $q$ questo stato
+Cosa succede quando l'automa $A$ legge $1^i$ *partendo da q*?
+- Se l'automa finisce la lettura in uno stato finale:
+	- allora accetta, *sbagliando*, la parola $0^j1^i$
+- Se l'automa finisce la lettura in uno stato non finale:
+	- allora rifiuta, *sbagliando*, la parola $0^j1^i$
+- In entrambi i casi abbiamo ingannato l'automa quindi $L_{01}$ *non può essere regolare*
 # Proprietà dei linguaggi regolari
 Possono essere utilizzate per dimostrare che un DFA effettua un loop per accettare un linguaggio regolare. La dimostrazione è più facile rispetto a quella precedente. 
 ## Pumping Lemma 
-Sia $L$ un linguaggio regolare. Allora
+Sia $L$ un ==linguaggio regolare==. Allora
 - _esiste una lunghezza_ $k>0$ tale che 
 - _ogni parola_ $w\in L$ di lunghezza $|w|\geq k$ 
 - _può essere spezzata_ in $w =xyz$ tale che 
@@ -43,7 +43,12 @@ Sia $L$ un linguaggio regolare. Allora
 $$p_0, p_1, p_2,\dots p_k\dots p_n$$
 - Siccome in $p_0, p_1,\dots p_k$ ci sono $k+1$ stati ne esiste uno che si ripete:
 Esistono $l< m$ tali che $p_l=p_m$ e $m \leq k$ 
-
+- Possiamo spezzare $w$ in 3 parti $w = xyz$
+	1. $x=a_1a_2 \dots a_l$
+	2. $y = a_{l+1}a_{l+2}\dots a_m$
+	3. $z = a_{m+1}a_{m+2}\dots a_n$
+- ![[Pasted image 20240323153337.png]]
+- E di conseguenza anche $xy^iz$ viene riconosciuta dall'automa *per ogni $i\geq 0$*
 #### Pumping lemma come gioco 
 Esiste una strategia che ci consente di vincere sempre su un certo linguaggio. 
 1. $\exists k>o$  (giocatore 1 sceglie la dimensione di $k$)
@@ -66,8 +71,6 @@ $$y = a^Q$$
 $$z = a^{K-P-Q}b^K$$
 Se prendiamo come esponente $i=2$ , $xy^2z=a^Pa^{2Q}a^{K-P-Q}b^K= a^{Q+K}b^K$ la parola non fa parte del linguaggio.
 **Conclusione: per assurdo non è regolare.**
-
-
 
 **Il linguaggio $L_{rev} = \{ww^R:w \in\{a,b\}*\}$ è regolare?**
 
